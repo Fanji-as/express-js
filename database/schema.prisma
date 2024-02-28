@@ -1,0 +1,95 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String   @id @default(uuid())
+  username   String   @unique @db.VarChar(255)
+  name       String   @db.VarChar(255)
+  email      String   @unique @db.VarChar(255)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Shop {
+  id         String   @id @default(uuid())
+  name       String   @db.VarChar(255)
+  city       String   @db.VarChar(255)
+  code       String   @unique
+  address    String   @db.LongText
+  zip_code   String   @db.VarChar(255)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  transactions Transaction[]
+
+  @@map("shops")
+}
+
+model Product {
+  id         String   @id @default(uuid())
+  name       String   @db.VarChar(255)
+  price      Float    @db.Double
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  items Item[]
+
+  @@map("products")
+}
+
+model Transaction {
+  id         String   @id @default(uuid())
+  shop_id    String   @db.VarChar(255)
+  code       String   @unique
+  total      Float    @db.Double
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  shop     Shop      @relation(fields: [shop_id], references: [id], onDelete: Cascade)
+  items    Item[]
+  payments Payment[]
+
+  @@map("transactions")
+}
+
+model Item {
+  id             String   @id @default(uuid())
+  transaction_id String   @db.VarChar(255)
+  product_id     String   @db.VarChar(255)
+  name           String   @db.VarChar(255)
+  quantity       String   @db.VarChar(255)
+  price          Float    @db.Double
+  subtotal       Float    @db.Double
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+
+  transaction Transaction @relation(fields: [transaction_id], references: [id], onDelete: Cascade)
+  product     Product     @relation(fields: [product_id], references: [id], onDelete: Cascade)
+
+  @@map("items")
+}
+
+model Payment {
+  id             String   @id @default(uuid())
+  transaction_id String   @db.VarChar(255)
+  code           String   @unique
+  method         String   @db.VarChar(255)
+  cost           Float    @db.Double
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+
+  transaction Transaction @relation(fields: [transaction_id], references: [id], onDelete: Cascade)
+
+  @@map("payments")
+}
