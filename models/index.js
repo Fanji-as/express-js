@@ -22,4 +22,5 @@ model.$on("query", (event) => {
 model.$on("error", (error) => {
   console.error("Error: " + error.message);
 });
+
 export { model, prisma };
