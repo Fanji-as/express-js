@@ -8,5 +8,4 @@ const app = express();
 app.get("/users", (req, res, next) => {
   return res.json(users);
 });
-
 app.listen(process.env.PORT);
