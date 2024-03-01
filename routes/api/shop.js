@@ -1,5 +1,6 @@
-import express from "express";
+import { BadRequestException } from "../../exceptions/BadRequestException.js";
 import { model } from "../../models/index.js";
+import express from "express";
 
 const router = express.Router();
 
@@ -10,7 +11,7 @@ router.get("/shops", (req, res, next) => {
       return res.json(shops);
     })
     .catch(function (error) {
-      return res.json({ message: error.message });
+      return next(error);
     });
 });
 
@@ -25,22 +26,23 @@ router.get("/shops/:code", (req, res, next) => {
       return res.json(shop);
     })
     .catch(function (error) {
-      return res.json({ message: error.message });
+      return next(error);
     });
 });
 
 router.post("/shops", async (req, res, next) => {
-  console.log(req.body);
   try {
     const shopByCode = await model.shop.findFirst({
       where: {
         code: req.body.code,
       },
     });
+
     if (shopByCode) {
-      throw new Error("shop code already exist");
+      throw new BadRequestException("Shop code already exist.");
     }
-    const createdShop = await model.shop.create({
+
+    const shop = await model.shop.create({
       data: {
         name: req.body.name,
         city: req.body.city,
@@ -49,13 +51,10 @@ router.post("/shops", async (req, res, next) => {
         code: req.body.code,
       },
     });
-    return res.json(createdShop);
+
+    return res.json(shop);
   } catch (error) {
-    console.error(error);
-    if (error.message === "shop code already exist") {
-      return res.status(400).json({ message: error.message });
-    }
-    return res.status(500).json({ message: error.message });
+    return next(error);
   }
 });
 
