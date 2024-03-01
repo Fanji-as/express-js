@@ -30,7 +30,6 @@ router.get("/shops/:code", (req, res, next) => {
 });
 
 router.post("/shops", async (req, res, next) => {
-  console.log(req.body);
   try {
     const shopByCode = await model.shop.findFirst({
       where: {
