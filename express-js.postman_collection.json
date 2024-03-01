@@ -11,21 +11,9 @@
 			"item": [
 				{
 					"name": "index",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n \"code\" : \"915349/LARIS/01\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{base_url}}/shops",
 							"host": [
@@ -106,7 +94,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \"code\" : \"915349/LARIS/01\"\r\n}",
+							"raw": "{\r\n\"code\" : \"2744462950\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -114,14 +102,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/transaction",
-							"protocol": "http",
+							"raw": "{{base_url}}/shops",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3000",
 							"path": [
-								"transaction"
+								"shops"
 							]
 						}
 					},
@@ -462,12 +448,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/product",
+							"raw": "{{base_url}}/products",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"product"
+								"products"
 							]
 						}
 					},
@@ -740,7 +726,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+							"raw": "{\r\n    \"code\" : \"915349/LARIS/01\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -748,12 +734,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/product",
+							"raw": "{{base_url}}/transactions",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"product"
+								"transactions"
 							]
 						}
 					},
@@ -937,12 +923,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/product",
+							"raw": "{{base_url}}/items",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"product"
+								"items"
 							]
 						}
 					},
@@ -1033,12 +1019,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/product",
+							"raw": "{{base_url}}/payments",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"product"
+								"payments"
 							]
 						}
 					},
