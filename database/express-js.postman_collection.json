@@ -1,0 +1,1117 @@
+{
+	"info": {
+		"_postman_id": "0e7377f3-1411-4f74-bb43-4ab93b6c493a",
+		"name": "express-js",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30855968"
+	},
+	"item": [
+		{
+			"name": "shop",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"code\" : \"915349/LARIS/01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/shops",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shops"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \"code\" : \"915349/LARIS/01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/shops",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"shops"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "282"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11a-JVnsodoN16a6VfCAEwIyEP14tLo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 06:40:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"0bc4da4c-5b21-4489-b95c-79c21ae16dea\",\n        \"name\": \"ANGGA JAYA\",\n        \"city\": \"SLEMAN\",\n        \"code\": \"2744462952\",\n        \"address\": \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\n        \"zip_code\": \"55283\",\n        \"created_at\": \"2024-02-26T06:55:30.870Z\",\n        \"updated_at\": \"2024-02-26T06:55:30.870Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"code\" : \"915349/LARIS/01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"SEGAR MANIS\",\r\n    \"city\" : \"BANDUNG\",\r\n    \"code\" : \"2744462950\",\r\n    \"address\" : \"JL LASWI BALEENDAH\",\r\n    \"zip_code\" : \"40375\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/shop",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"shop"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "233"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e9-eg/4So/a23vMBX3sCkgjClvtn+U\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 06:52:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"3b21ffb7-e0ec-4980-9ecc-f0ff9c399a5a\",\n    \"name\": \"SEGAR MANIS\",\n    \"city\": \"BANDUNG\",\n    \"code\": \"2744462950\",\n    \"address\": \"JL LASWI BALEENDAH\",\n    \"zip_code\": \"40375\",\n    \"created_at\": \"2024-02-28T06:52:45.407Z\",\n    \"updated_at\": \"2024-02-28T06:52:45.407Z\"\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"code\" : \"2744462950\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/shop",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"shop"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-h5OK9AoMLldgTg3puKyfCrhKPgs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 06:53:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"shop code already exist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"code\" : \"915349/LARIS/01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/shops/:code",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shops",
+								":code"
+							],
+							"variable": [
+								{
+									"key": "code",
+									"value": "2744462950"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \"code\" : \"915349/LARIS/01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/shops/:code",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"shops",
+										":code"
+									],
+									"variable": [
+										{
+											"key": "code",
+											"value": "2744462950"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "233"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e9-eg/4So/a23vMBX3sCkgjClvtn+U\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 06:57:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"3b21ffb7-e0ec-4980-9ecc-f0ff9c399a5a\",\n    \"name\": \"SEGAR MANIS\",\n    \"city\": \"BANDUNG\",\n    \"code\": \"2744462950\",\n    \"address\": \"JL LASWI BALEENDAH\",\n    \"zip_code\": \"40375\",\n    \"created_at\": \"2024-02-28T06:52:45.407Z\",\n    \"updated_at\": \"2024-02-28T06:52:45.407Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "167"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a7-wovkUc1p+B46ANpbHpAiZz/n1ok\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 07:00:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"f585fb0a-0576-4490-aba5-9f29076eed46\",\n        \"name\": \"LE MINERAL 1500ML\",\n        \"price\": 6500,\n        \"created_at\": \"2024-02-26T06:55:30.882Z\",\n        \"updated_at\": \"2024-02-26T06:55:30.882Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"CIMORY SQZ MANGO 120\",\r\n    \"price\" : 10000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"CIMORY SQZ MANGO 120\",\r\n    \"price\" : 10000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/product",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a9-VsYUdBZuyBuzb+6zSE4PpK/qJN8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 07:07:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"7f9758a5-0755-4dbb-9013-23f913079a7c\",\n    \"name\": \"CIMORY SQZ MANGO 120\",\n    \"price\": 10000,\n    \"created_at\": \"2024-02-28T07:07:40.964Z\",\n    \"updated_at\": \"2024-02-28T07:07:40.964Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "f585fb0a-0576-4490-aba5-9f29076eed46"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "7f9758a5-0755-4dbb-9013-23f913079a7c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a9-VsYUdBZuyBuzb+6zSE4PpK/qJN8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 07:13:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"7f9758a5-0755-4dbb-9013-23f913079a7c\",\n    \"name\": \"CIMORY SQZ MANGO 120\",\n    \"price\": 10000,\n    \"created_at\": \"2024-02-28T07:07:40.964Z\",\n    \"updated_at\": \"2024-02-28T07:07:40.964Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/transactions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/transactions",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "215"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d7-+BWJIjgLO5feu6UDI9QZq2W/mt8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 07:35:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"9d0a7fc3-9960-494a-9eb8-eedda9428090\",\n        \"shop_id\": \"0bc4da4c-5b21-4489-b95c-79c21ae16dea\",\n        \"code\": \"915349/LARIS/01\",\n        \"total\": 33100,\n        \"created_at\": \"2024-02-26T06:55:30.895Z\",\n        \"updated_at\": \"2024-02-26T06:55:30.895Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\" : \"915349/LARIS/01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/transaction",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"transaction"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-IShhXr9TWriQKSImR/9npJYj9eU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 07:16:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"transaction already exist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// pm.request.url.variables = pm.request.url.variables.map(variable => {\r",
+									"//     if (variable.key === \"code\" && variable?.value !== \"\") {\r",
+									"//         variable.value = encodeURIComponent(variable.value)\r",
+									"//     }\r",
+									"//     console.log(variable);\r",
+									"\r",
+									"//     return variable;\r",
+									"// });\r",
+									"\r",
+									"if (pm.collectionVariables.has(\"transaction_code\")) {\r",
+									"    pm.collectionVariables.set(\"transaction_code\", encodeURIComponent(pm.collectionVariables.get(\"transaction_code\")))\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/transactions/:code",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transactions",
+								":code"
+							],
+							"variable": [
+								{
+									"key": "code",
+									"value": "{{transaction_code}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "item",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/items",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/items/:name",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"items",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/payments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ANGGA JAYA\",\r\n    \"city\" : \"SLEMAN\",\r\n    \"address\" : \"JL ANGGA JAYA I NO 282A RT02 RW09 CONDONGCATUR KEC DEPOK KAB SLEMAN\",\r\n    \"zip_code\" : \"55283\",\r\n    \"code\" : \"2744462952\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/payments/:code",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payments",
+								":code"
+							],
+							"variable": [
+								{
+									"key": "code",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "transaction_code",
+			"value": "915349/LARIS/01",
+			"type": "string"
+		}
+	]
+}
