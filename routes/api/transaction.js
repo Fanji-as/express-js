@@ -1,3 +1,4 @@
+import { BadRequestException } from "../../exceptions/BadRequestException.js";
 import express from "express";
 import { model } from "../../models/index.js";
 
@@ -15,12 +16,12 @@ router.get("/transactions", async (req, res, next) => {
 
 router.get("/transactions/:code", async (req, res, next) => {
   try {
-    console.log("tes", req.params);
     const transaction = await model.transaction.findFirst({
       where: {
         code: req.params.code,
       },
     });
+
     return res.json(transaction);
   } catch (error) {
     console.error(error);
@@ -29,15 +30,15 @@ router.get("/transactions/:code", async (req, res, next) => {
 });
 
 router.post("/transactions", async (req, res, next) => {
-  console.log(req.body);
   try {
     const transactionByCode = await model.transaction.findFirst({
       where: {
         code: req.body.code,
       },
     });
+
     if (transactionByCode) {
-      throw new Error("transaction already exist");
+      throw new BadRequestException("transaction already exist");
     }
     const createdTransaction = await model.transaction.create({
       data: {
@@ -45,13 +46,10 @@ router.post("/transactions", async (req, res, next) => {
         total: req.body.transaction,
       },
     });
+
     return res.json(createdTransaction);
   } catch (error) {
-    console.error(error);
-    if (error.message === "transaction already exist") {
-      return res.status(400).json({ message: error.message });
-    }
-    return res.status(500).json({ message: error.message });
+    return next(error);
   }
 });
 

@@ -1,3 +1,4 @@
+import { BadRequestException } from "../../exceptions/BadRequestException.js";
 import express from "express";
 import { model } from "../../models/index.js";
 
@@ -19,6 +20,7 @@ router.get("/items/:name", async (req, res, next) => {
         name: req.params.name,
       },
     });
+
     return res.json(item);
   } catch (error) {
     return res.json({ message: error.message });
@@ -26,15 +28,15 @@ router.get("/items/:name", async (req, res, next) => {
 });
 
 router.post("/items", async (req, res, next) => {
-  console.log(req.body);
   try {
     const itemByCode = await model.item.findFirst({
       where: {
         code: req.body.code,
       },
     });
+
     if (itemByCode) {
-      throw new Error("item already exist");
+      throw new BadRequestException("item already exist");
     }
     const createdItem = await model.item.create({
       data: {
@@ -42,13 +44,10 @@ router.post("/items", async (req, res, next) => {
         total: req.body.transaction,
       },
     });
+
     return res.json(createdItem);
   } catch (error) {
-    console.error(error);
-    if (error.message === "item already exist") {
-      return res.status(400).json({ message: error.message });
-    }
-    return res.status(500).json({ message: error.message });
+    return next(error);
   }
 });
 
