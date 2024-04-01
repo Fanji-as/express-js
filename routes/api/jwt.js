@@ -1,31 +1,37 @@
 import dotenv from "dotenv";
 import express from "express";
 import jwt from "jsonwebtoken";
+import { expressjwt } from "express-jwt";
 
 dotenv.config();
 
 const router = express.Router();
 
-router.post("/jwt/:sign", async (req, res, next) => {
+router.post("/jwt/sign", async (req, res, next) => {
   const payload = {
     name: "fanji",
     address: "Bandung",
   };
-  const token = jwt.sign({ payload }, process.env.JWT_SECRET);
+  const token = jwt.sign(payload, process.env.JWT_SECRET, {
+    algorithm: process.env.JWT_ALGORITHM,
+  });
   res.json({
     token: token,
   });
 });
 
-router.get("/jwt/:verify", async (req, res, next) => {
-  const authHeader = req.headers.authorization;
-  const token = authHeader.split(" ")[1];
-  try {
-    const decode = jwt.verify(token, process.env.JWT_SECRET);
-    res.json(decode);
-  } catch (error) {
-    res.status(401).json({ error: "Invalid token" });
+router.get(
+  "/jwt/verify",
+  expressjwt({
+    secret: process.env.JWT_SECRET,
+    algorithms: [process.env.JWT_ALGORITHM],
+    isRevoked: (req, jwt) => {
+      req.jwt = jwt.payload;
+    },
+  }),
+  async (req, res, next) => {
+    res.json(req.jwt);
   }
-});
+);
 
 export default router;
