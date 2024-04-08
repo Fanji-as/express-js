@@ -5,6 +5,7 @@ import shop from "./shop.js";
 import transaction from "./transaction.js";
 import express from "express";
 import jwt from "./jwt.js";
+import auth from "./auth.js";
 
 const router = express.Router();
 
@@ -14,5 +15,6 @@ router.use(transaction);
 router.use(item);
 router.use(payment);
 router.use(jwt);
+router.use(auth);
 
 export default router;
