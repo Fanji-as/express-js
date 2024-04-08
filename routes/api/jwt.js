@@ -8,16 +8,26 @@ dotenv.config();
 const router = express.Router();
 
 router.post("/jwt/sign", async (req, res, next) => {
+  const { username, name, email, password } = req.body;
+  if (!name || !email) {
+    return res.status(400).json({ error: "Name and address are required" });
+  }
   const payload = {
-    name: "fanji",
-    address: "Bandung",
+    username,
+    name,
+    email,
+    password,
   };
-  const token = jwt.sign(payload, process.env.JWT_SECRET, {
-    algorithm: process.env.JWT_ALGORITHM,
-  });
-  res.json({
-    token: token,
-  });
+  try {
+    const token = jwt.sign(payload, process.env.JWT_SECRET, {
+      algorithm: process.env.JWT_ALGORITHM,
+    });
+    res.json({
+      token: token,
+    });
+  } catch (error) {
+    next(error);
+  }
 });
 
 router.get(
