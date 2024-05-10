@@ -29,6 +29,7 @@
   "homepage": "https://github.com/Fanji-as/express-js#readme",
   "dependencies": {
     "@prisma/client": "^5.9.1",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "express-joi-validator": "^2.0.1",

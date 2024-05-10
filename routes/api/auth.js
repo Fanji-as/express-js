@@ -1,6 +1,8 @@
 import express from "express";
 import { model } from "../../models/index.js";
 import Joi from "joi";
+import { Hash } from "../../supports/Hash.js";
+import { Jwt } from "../../supports/Jwt.js";
 
 const router = express.Router();
 
@@ -13,6 +15,7 @@ const register = Joi.object({
   username: Joi.string().min(3).max(30).required(),
   name: Joi.string().min(3).max(30).required(),
   email: Joi.string().email().required(),
+  password: Joi.string(),
 });
 
 router.post("/login", async (req, res, next) => {
@@ -26,11 +29,11 @@ router.post("/login", async (req, res, next) => {
     const user = await model.user.findUnique({
       where: { email: email },
     });
-    if (!user || user.password !== password) {
+    if (!user || !new Hash().check(password, user.password)) {
       return res.status(401).json({ error: "Invalid email or password" });
     }
 
-    res.json({ token: token });
+    res.json({ token: new Jwt().sign(user) });
   } catch (error) {
     next(error);
   }
@@ -56,7 +59,7 @@ router.post("/register", async (req, res, next) => {
         username: username,
         name: name,
         email: email,
-        password: password,
+        password: new Hash().make(password),
       },
     });
     res.json(createUser);
